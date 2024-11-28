@@ -2,24 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useCallback, useRef, DetailedHTMLProps, LegacyRef } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import heroImage from "@/public/assets/images/my-photo.jpg"
 import logo from "@/public/assets/images/logo-avi.png"
 import Kontak from "@/features/home/components/Kontak";
 import TentangSaya from "@/features/home/components/TentangSaya";
 import Portfolio from "@/features/home/components/Portfolio";
-import useSendMessageHook from "@/features/home/hooks/useSendMessageHook";
 
 export default function Home() {
 
   const [ hamburgerActive, setHamburgerActive ] = useState('')
   const [ showHamburgerNav, setShowHamburgerNav ] = useState('scale-y-0')
   const [ fixedNavbar, setFixedNavbar ] = useState<string>('absolute-navbar')
-  const [ previewSection, setPreviewSection ] = useState<any>('')
+  const [ previewSection, setPreviewSection ] = useState<ReactNode>('')
   const [ previewSectionTentangSaya, setPreviewSectionTentangSaya ] = useState<boolean>(false)
   const [ previewSectionPortfolio, setPreviewSectionPortfolio ] = useState<boolean>(false)
   const [ previewSectionKontak, setPreviewSectionKontak ] = useState<boolean>(false)
-  const headerRef = useRef<any>()
 
   const toggleHamburgerActive = () => {
     if(!hamburgerActive) {
@@ -182,9 +180,15 @@ export default function Home() {
         </div>
       </section>
       {/* Hero Section End */}
+      <section id='tentang-saya'>
       <TentangSaya/>
+      </section>
+      <section id='portfolio'>
       <Portfolio/>
+      </section>
+      <section id='kontak'>
       <Kontak />
+      </section>
     </main>
   );
 }

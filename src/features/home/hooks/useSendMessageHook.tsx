@@ -17,6 +17,7 @@ const useSendMessageHook = () => {
           await sendMail({ email: values.email, message: values.message, name: values.name })
           toast.success('Mengirim pesan berhasil')
         } catch (err) {
+          console.log(err)
           toast.error('Mengirim pesan gagal')
         } finally {
           setIsLoading(false)

@@ -24,7 +24,7 @@ const TentangSaya = ({ isUseAOS = true }) => {
     AOS.init()
   }, [])
   return (
-    <section id='tentang-saya'>
+    <section>
         <div className="px-3 sm:px-8 pt-20 md:px-12 pb-4 lg:px-16">
           <div className="flex flex-wrap">
             <section className="md:w-1/2 w-full px-4 mb-10" data-aos={isUseAOS && 'fade-right'}>

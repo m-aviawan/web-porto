@@ -17,7 +17,7 @@ const Portfolio = ({ isUseAOS = true }: IPortfolioProps) => {
     AOS.init()
   }, [])  
   return (
-    <section id='portfolio'>
+    <section>
         <div className="px-3 sm:px-8 pt-20 md:px-12 lg:px-16 pb-4">
           <div className="w-full px-4">
             <section className="mx-auto text-center mb-16" data-aos={isUseAOS && 'fade-up'}>

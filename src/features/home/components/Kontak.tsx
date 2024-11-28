@@ -18,7 +18,7 @@ const Kontak = ({ isUseAOS = true }) => {
   }, [])
 
   return (
-    <section id='kontak'>
+    <section>
         <div className="px-3 sm:px-8 md:px-12 lg:px-16 pt-20 pb-4">
             <Formik
             initialValues={{
@@ -38,8 +38,6 @@ const Kontak = ({ isUseAOS = true }) => {
               })
             }}
             >
-              {
-                ({setFieldValue}) => (
                 <Form className="flex flex-col px-4 gap-10">
                   <hgroup className="flex flex-col justify-center items-start" data-aos={isUseAOS && 'fade-left'}>
                     <h1 className="font-semibold text-lg text-green-600 mb-2">Butuh?</h1>
@@ -73,8 +71,6 @@ const Kontak = ({ isUseAOS = true }) => {
                   Mohon maaf jika saya ada keterbatasan dalam membalas email.
                   </p>
                 </Form>
-                )
-              }
             </Formik>
 
         </div>

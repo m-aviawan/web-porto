@@ -2,7 +2,6 @@
 
 import { Resend } from 'resend';
 import dotenv from 'dotenv'
-// import { compile } from 'handlebars';
 import fs from 'fs'
 
 dotenv.config()
@@ -17,8 +16,6 @@ export default async function sendMail({email, message, name}: ISendMailProps) {
     try {
         const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
         const emailHTML = fs.readFileSync('./src/public/assets/bodyEmail/contactMeRespond.html', 'utf-8')
-        // let compiledEmailHTML: any = await compile(emailHTML)
-        // compiledEmailHTML = compiledEmailHTML({timestamp: new Date().toLocaleString()})
         
         const sendEmailToOther = await resend.emails.send({
           from: 'onboarding@resend.dev',
@@ -39,9 +36,8 @@ export default async function sendMail({email, message, name}: ISendMailProps) {
             sendEmailToUser
         }
     } catch (err) {
-        const error = 'Send Email Failed!'
         return {
-            error
+            err
         }
     }
 }
