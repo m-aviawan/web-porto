@@ -104,7 +104,7 @@ export default function Home() {
                     }}
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Tentang Saya
                     </div>
-                    <div className={`${(previewSection && previewSectionTentangSaya) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[20px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
+                    <div className={`${(previewSection && previewSectionTentangSaya) ? 'border border-gray-300 lg:flex' : 'lg:hidden'} hidden scale-50 origin-top fixed top-[60px] right-[20px] pt-10 bg-white w-[700px] rounded-3xl`}>
                       {previewSection}
                     </div>
                   </li>
@@ -121,7 +121,7 @@ export default function Home() {
                     }}
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Portfolio
                     </div>
-                    <div className={`${(previewSection && previewSectionPortfolio) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-70px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
+                    <div className={`${(previewSection && previewSectionPortfolio) ? 'border border-gray-300 lg:flex' : 'lg:hidden'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-70px] pt-10 bg-white w-[700px] rounded-3xl`}>
                       {previewSection}
                     </div>
                   </li>
@@ -138,7 +138,7 @@ export default function Home() {
                     }}
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Kontak
                     </div>
-                    <div className={`${(previewSection && previewSectionKontak) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-160px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
+                    <div className={`${(previewSection && previewSectionKontak) ? 'border border-gray-300 lg:flex' : 'lg:hidden'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-160px] pt-10 bg-white w-[700px] rounded-3xl`}>
                       {previewSection}
                     </div>
                   </li>

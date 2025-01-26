@@ -31,7 +31,7 @@ const TentangSaya = ({ isUseAOS = true }) => {
               <h1 className='font-bold uppercase text-green-600 mb-3'>Tentang Saya</h1>
               <h2 className="font-bold text-gray-800 text-3xl mb-5 max-w-xl">Bekerja dengan setulus hati</h2>
               <p className="font-medium text-base text-gray-700 text-justify">
-                Saya merupakan seorang yang melakukan switching career semenjak tahun 2024.
+                Switching career semenjak tahun 2024.
                 Saya merupakan pekerja keras yang berorientasikan pada usaha dan target. 
                 Saya ingin memberikan kontribusi yang dapat dikenang dalam hal yang positif di perusahaan tempat saya bekerja.
                 Dalam bekerja, saya berusaha untuk menciptakan lingkungan yang harmonis 
