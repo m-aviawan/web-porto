@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect } from "react";
 import heroImage from "@/public/assets/images/my-photo.jpg"
 import logo from "@/public/assets/images/logo-avi.png"
 import Kontak from "@/features/home/components/Kontak";
@@ -14,10 +14,6 @@ export default function Home() {
   const [ hamburgerActive, setHamburgerActive ] = useState('')
   const [ showHamburgerNav, setShowHamburgerNav ] = useState('scale-y-0')
   const [ fixedNavbar, setFixedNavbar ] = useState<string>('absolute-navbar')
-  const [ previewSection, setPreviewSection ] = useState<ReactNode>('')
-  const [ previewSectionTentangSaya, setPreviewSectionTentangSaya ] = useState<boolean>(false)
-  const [ previewSectionPortfolio, setPreviewSectionPortfolio ] = useState<boolean>(false)
-  const [ previewSectionKontak, setPreviewSectionKontak ] = useState<boolean>(false)
 
   const toggleHamburgerActive = () => {
     if(!hamburgerActive) {
@@ -37,33 +33,8 @@ export default function Home() {
         setFixedNavbar('absolute-navbar')
       }
     })
-
-    if(window.innerWidth < 768) {
-      setPreviewSection('')
-      setPreviewSectionKontak(false)
-      setPreviewSectionPortfolio(false)
-      setPreviewSectionTentangSaya(false)
-    }
   }, [])
 
-  const showPreview = (section: string) => {
-    if(section === 'tentangSaya') {
-      setTimeout(() => {
-        setPreviewSection(<TentangSaya isUseAOS={false}/>)
-        setPreviewSectionTentangSaya(true)
-      },500)
-    } else if(section === 'portfolio') {
-      setTimeout(() => {
-        setPreviewSection(<Portfolio isUseAOS={false}/>)
-        setPreviewSectionPortfolio(true)
-      },500)
-    } else if(section === 'kontak') {
-      setTimeout(() => {
-        setPreviewSection(<Kontak isUseAOS={false}/>)
-        setPreviewSectionKontak(true)
-      },500)
-    }
-  }
   return (
     <main className="flex flex-col pb-20 w-full overflow-hidden">
       {/* Header Section Start */}
@@ -95,51 +66,21 @@ export default function Home() {
                   <Link href='#tentang-saya'>
                   <li onClick={toggleHamburgerActive}>
                     <div 
-                    onMouseOver={() => showPreview('tentangSaya')}
-                    onMouseOut={() => {
-                      setPreviewSection('')
-                      setPreviewSectionTentangSaya(false)
-                      setPreviewSectionPortfolio(false)
-                      setPreviewSectionKontak(false)
-                    }}
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Tentang Saya
-                    </div>
-                    <div className={`${(previewSection && previewSectionTentangSaya) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[20px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
-                      {previewSection}
                     </div>
                   </li>
                   </Link>
                   <Link href='#portfolio'>
                   <li onClick={toggleHamburgerActive}>
-                    <div 
-                    onMouseOver={() => showPreview('portfolio')}
-                    onMouseOut={() => {
-                      setPreviewSection('')
-                      setPreviewSectionTentangSaya(false)
-                      setPreviewSectionPortfolio(false)
-                      setPreviewSectionKontak(false)
-                    }}
+                    <div
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Portfolio
-                    </div>
-                    <div className={`${(previewSection && previewSectionPortfolio) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-70px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
-                      {previewSection}
                     </div>
                   </li>
                   </Link>
                   <Link href='#kontak'>
                   <li onClick={toggleHamburgerActive}>
-                    <div 
-                    onMouseOver={() => showPreview('kontak')}
-                    onMouseOut={() => {
-                      setPreviewSection('')
-                      setPreviewSectionTentangSaya(false)
-                      setPreviewSectionPortfolio(false)
-                      setPreviewSectionKontak(false)
-                    }}
+                    <div
                     className="px-5 py-2 hover:bg-green-600 md:rounded-full hover:cursor-pointer active:scale-90 hover:text-white transition duration-200">Kontak
-                    </div>
-                    <div className={`${(previewSection && previewSectionKontak) ? 'border border-gray-300' : 'scale-y-0'} hidden lg:flex scale-50 origin-top fixed top-[60px] right-[-160px] pt-10 bg-white w-[700px] transition duration-300 rounded-3xl`}>
-                      {previewSection}
                     </div>
                   </li>
                   </Link>
